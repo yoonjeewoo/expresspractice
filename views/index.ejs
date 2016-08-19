@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul id="data">
+    </ul>
+    <script>
+    var $data = $('#data');
+    var $name = "jeewoo";
+    var $order = 'jeejee';
+    $(function() {
+      // $.ajax({
+      //   type : 'GET',
+      //   url : '/data',
+      //   success: function(data) {
+      //     $.each(data.categories, function(i,item){
+      //       $data.append("<li>"+item.categoryName+"</li>")
+      //     }); 
+      //   }
+      // });
+      var make = {
+        name : $name;
+        order : $order;
+      }
+      $.ajax({
+        type : 'POST',
+        url : '/data',
+        data : make,
+        success: function(data) {
+          
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
